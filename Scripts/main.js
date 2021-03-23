@@ -19,11 +19,11 @@ function detectPreCommit(path) {
   path = nova.path.normalize(path);
   if (preCommitCache[path]) return true;
   while (path !== "/") {
-    if (nova.fs.isFile(nova.path.join(path, ".pre-commit-config.yaml"))) {
+    if (nova.fs.stat(nova.path.join(path, ".pre-commit-config.yaml"))) {
       preCommitCache[path] = true;
       return true;
     }
-    if (nova.fs.isDirectory(nova.path.join(path, ".git"))) {
+    if (nova.fs.stat(nova.path.join(path, ".git"))) {
       return false;
     }
     path = nova.path.dirname(path);
@@ -47,7 +47,7 @@ function preCommit(args, cwd, showOnError = false) {
     args: ["pre-commit", "run"].concat(args),
     cwd: cwd,
   };
-  console.log("running", options.args);
+  console.log(options.args.join(" "));
   var process = new Process("/usr/bin/env", options);
   var lines = [];
 
