@@ -1,0 +1,43 @@
+{
+  "identifier": "net.minrk.pre-commit",
+  "name": "pre-commit",
+  "organization": "minrk",
+  "description": "Run pre-commit checks",
+  "version": "1.0",
+  "categories": ["commands", "formatters", "linters"],
+
+  "main": "main.js",
+
+  "entitlements": {
+    "filesystem": "readwrite",
+    "process": true
+  },
+
+  "commands": {
+    "editor": [
+      {
+        "title": "pre-commit run on all files",
+        "command": "pre-commit.runAllFiles"
+      },
+      {
+        "title": "pre-commit run on current file",
+        "command": "pre-commit.runCurrent"
+      }
+    ]
+  },
+
+  "config": [
+    {
+      "key": "pre-commit.showOutput",
+      "title": "Show pre-commit output on error",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "pre-commit.runOnSave",
+      "title": "Run pre-commit on save",
+      "type": "boolean",
+      "default": false
+    }
+  ]
+}
