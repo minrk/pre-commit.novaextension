@@ -4,7 +4,11 @@
   "organization": "minrk",
   "description": "Run pre-commit checks",
   "version": "1.0",
-  "categories": ["commands", "formatters", "linters"],
+  "homepage": "https://github.com/minrk/pre-commit.novaextension",
+  "bugs": "https://github.com/minrk/pre-commit.novaextension/issues",
+  "license": "BSD-3-Clause",
+
+  "categories": ["commands", "formatters"],
 
   "main": "main.js",
 
