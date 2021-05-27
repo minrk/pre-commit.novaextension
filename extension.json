@@ -3,7 +3,7 @@
   "name": "pre-commit",
   "organization": "minrk",
   "description": "Run pre-commit checks",
-  "version": "1.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/minrk/pre-commit.novaextension",
   "bugs": "https://github.com/minrk/pre-commit.novaextension/issues",
   "license": "BSD-3-Clause",
