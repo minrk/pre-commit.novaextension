@@ -39,7 +39,7 @@ function preCommitOnSave(editor) {
   if (!detectPreCommit(path)) {
     return;
   }
-  preCommit(["--files", path], nova.path.dirname(path));
+  preCommit(["--files", nova.path.basename(path)], nova.path.dirname(path));
 }
 
 function preCommit(args, cwd, showOnError = false) {
@@ -76,7 +76,7 @@ nova.commands.register("pre-commit.runAllFiles", (editor) => {
 
 nova.commands.register("pre-commit.runCurrent", (editor) => {
   preCommit(
-    ["--files", editor.document.path],
+    ["--files", nova.path.basename(editor.document.path)],
     nova.path.dirname(editor.document.path)
   );
 });
