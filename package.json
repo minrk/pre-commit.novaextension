@@ -1,6 +1,9 @@
 {
+  "scripts": {
+    "eslint": "eslint Scripts/main.js"
+  },
   "devDependencies": {
-    "eslint": "^7.22.0",
-    "eslint-plugin-nova": "^1.5.0"
+    "eslint": "^8.40.0",
+    "eslint-plugin-nova": "^1.7.0"
   }
 }
