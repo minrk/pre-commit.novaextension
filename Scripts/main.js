@@ -77,6 +77,6 @@ nova.commands.register("pre-commit.runAllFiles", (editor) => {
 nova.commands.register("pre-commit.runCurrent", (editor) => {
   preCommit(
     ["--files", nova.path.basename(editor.document.path)],
-    nova.path.dirname(editor.document.path)
+    nova.path.dirname(editor.document.path),
   );
 });
