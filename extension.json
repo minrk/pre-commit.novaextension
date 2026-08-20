@@ -26,6 +26,10 @@
       {
         "title": "pre-commit run on current file",
         "command": "pre-commit.runCurrent"
+      },
+      {
+        "title": "pre-commit: install hooks",
+        "command": "pre-commit.installHooks"
       }
     ]
   },

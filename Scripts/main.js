@@ -99,7 +99,7 @@ async function preCommit(args, cwd, showOnError = false) {
     return;
   }
   var options = {
-    args: [exe, "run"].concat(args),
+    args: [exe].concat(args),
     cwd: cwd,
   };
   console.log(options.args.join(" "));
@@ -115,7 +115,7 @@ async function preCommit(args, cwd, showOnError = false) {
   process.onStderr(collect);
 
   process.onDidExit(function (status) {
-    var string = `pre-commit exited with status ${status}:\n` + lines.join("");
+    var string = `${exe} exited with status ${status}:\n` + lines.join("");
     console.log(string);
     if (status && showOnError) {
       nova.workspace.showWarningMessage(string);
@@ -126,12 +126,19 @@ async function preCommit(args, cwd, showOnError = false) {
 }
 
 nova.commands.register("pre-commit.runAllFiles", (editor) => {
-  preCommit(["--all-files"], nova.path.dirname(editor.document.path));
+  preCommit(["run", "--all-files"], nova.path.dirname(editor.document.path));
 });
 
 nova.commands.register("pre-commit.runCurrent", (editor) => {
   preCommit(
-    ["--files", nova.path.basename(editor.document.path)],
+    ["run", "--files", nova.path.basename(editor.document.path)],
+    nova.path.dirname(editor.document.path),
+  );
+});
+
+nova.commands.register("pre-commit.installHooks", (editor) => {
+  preCommit(
+    ["install", "--install-hooks"],
     nova.path.dirname(editor.document.path),
   );
 });
