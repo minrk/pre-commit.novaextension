@@ -27,9 +27,11 @@ This extension is not officially affiliated with or endorsed by the pre-commit p
 🎈 If your extension depends on external processes or tools that users will need to have, it's helpful to list those and provide links to their installers:
 -->
 
-pre-commit must be installed on your system:
+prek or pre-commit must be installed on your system:
 
 ```bash
+brew install prek
+# or
 pip install pre-commit
 ```
 
