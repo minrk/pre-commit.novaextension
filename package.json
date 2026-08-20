@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "eslint": "eslint Scripts/main.js"
+    "eslint": "eslint",
+    "install-eslint": "npm install && npm run eslint"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.6",

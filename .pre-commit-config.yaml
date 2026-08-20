@@ -1,7 +1,7 @@
 repos:
   # Autoformat: markdown, javacsript
   - repo: https://github.com/rbubley/mirrors-prettier
-    rev: 0ee178619d696787ca73d210cc191d720868c631  # frozen: v3.9.6
+    rev: 0ee178619d696787ca73d210cc191d720868c631 # frozen: v3.9.6
     hooks:
       - id: prettier
 
@@ -9,7 +9,10 @@ repos:
     hooks:
       - id: eslint
         name: lint
-        language: node
-        entry: "npm run eslint"
-        files: ".*.js"
-        pass_filenames: false
+        language: unsupported
+        entry: "npm run install-eslint"
+        types_or:
+          - javascript
+          - jsx
+          - ts
+          - tsx
