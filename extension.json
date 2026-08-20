@@ -3,7 +3,7 @@
   "name": "pre-commit",
   "organization": "minrk",
   "description": "Run pre-commit checks",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "homepage": "https://github.com/minrk/pre-commit.novaextension",
   "bugs": "https://github.com/minrk/pre-commit.novaextension/issues",
   "license": "BSD-3-Clause",
@@ -31,6 +31,20 @@
   },
 
   "config": [
+    {
+      "key": "pre-commit.executable",
+      "title": "executable",
+      "type": "path",
+      "description": "Set path to pre-commit (or prek) executable. Default: auto",
+      "default": ""
+    },
+    {
+      "key": "pre-commit.preferPreK",
+      "title": "Prefer prek to pre-commit",
+      "type": "boolean",
+      "description": "Prefer prek to pre-commit if both are found when auto-detecting executable. Ignored if executable is set above.",
+      "default": true
+    },
     {
       "key": "pre-commit.showOutput",
       "title": "Show pre-commit output on error",
