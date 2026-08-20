@@ -1,9 +1,13 @@
 {
   "scripts": {
-    "eslint": "eslint Scripts/main.js"
+    "eslint": "eslint",
+    "install-eslint": "npm install && npm run eslint"
   },
   "devDependencies": {
-    "eslint": "^8.40.0",
-    "eslint-plugin-nova": "^1.7.0"
+    "@eslint/eslintrc": "^3.3.6",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10",
+    "eslint-plugin-nova": "^1.7.0",
+    "globals": "^17.11.0"
   }
 }
